@@ -30,7 +30,23 @@ function isInputEmpty(input) {
   return !input.value || input.value === "" || input.value === null;
 }
 
+/** removeTodo
+ * remove todo item
+ * @param {HTMLElement} element - todo li item
+ */
+function removeTodo(element) {
+  const parent = element.parentElement;
+  parent.remove();
+}
+
 // add todo item when add button is clicked
 add.addEventListener("click", () => {
   addTodo(todo);
+});
+
+// remove todo item when "X" button is clicked
+document.addEventListener("click", (e) => {
+  if (e.target && e.target.id == "remove") {
+    removeTodo(e.target);
+  }
 });
