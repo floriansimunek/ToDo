@@ -3,27 +3,27 @@ const list = document.querySelector("#list");
 // done todo list display
 const doneList = document.querySelector("#done-list");
 // todo input
-const todo = document.querySelector("#todo");
+const input = document.querySelector("#input");
 // todo add button
 const add = document.querySelector("#add");
 
 /** addTodo
  * add todo item to the todolist
- * @param {HTMLElement} todo - todo input
+ * @param {HTMLElement} input - todo input
  */
-function addTodo(todo) {
+function addTodo(input) {
   // check if input is not empty or null
-  if (isInputEmpty(todo)) {
+  if (isInputEmpty(input)) {
     alert("Empty Input !");
   } else {
     // create the li element + button "check" and "remove" - add it to the list
     let li = document.createElement("li");
-    li.innerHTML = "<p>" + todo.value + '</p><input id="done" type="button" value="V"><input id="remove" type="button" value="X">';
+    li.innerHTML = "<p>" + input.value + '</p><input id="done" type="button" value="V"><input id="remove" type="button" value="X">';
     list.appendChild(li);
     // display title if the list contain 1 or more todo item
     displayTitle(list);
     // reset todo input value
-    todo.value = "";
+    input.value = "";
   }
 }
 
@@ -74,7 +74,7 @@ function notDoneTodo(element) {
 
 // add todo item when add button is clicked
 add.addEventListener("click", () => {
-  addTodo(todo);
+  addTodo(input);
 });
 
 document.addEventListener("click", (e) => {
