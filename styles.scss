@@ -24,6 +24,23 @@ body {
   justify-content: center;
   align-items: center;
 
+  // tablet
+  @media screen and (min-width: 768px) {
+    width: 60%;
+  }
+  // tablet landscape
+  @media screen and (min-width: 1024px) {
+    width: 40%;
+  }
+  // laptop
+  @media screen and (min-width: 1600px) {
+    width: 30%;
+  }
+  // desktop
+  @media screen and (min-width: 1600px) {
+    width: 20%;
+  }
+
   form {
     width: 100%;
     //flex

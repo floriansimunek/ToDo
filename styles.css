@@ -22,6 +22,26 @@ body {
   justify-content: center;
   align-items: center;
 }
+@media screen and (min-width: 768px) {
+  #todo {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #todo {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 1600px) {
+  #todo {
+    width: 30%;
+  }
+}
+@media screen and (min-width: 1600px) {
+  #todo {
+    width: 20%;
+  }
+}
 #todo form {
   width: 100%;
   display: flex;
