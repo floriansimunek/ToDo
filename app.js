@@ -18,7 +18,7 @@ function addTodo(todo) {
   } else {
     // create the li element + button "check" and "remove" - add it to the list
     let li = document.createElement("li");
-    li.innerHTML = todo.value + '<input id="done" type="button" value="V"><input id="remove" type="button" value="X">';
+    li.innerHTML = "<p>" + todo.value + '</p><input id="done" type="button" value="V"><input id="remove" type="button" value="X">';
     list.appendChild(li);
     // reset todo input value
     todo.value = "";
@@ -46,7 +46,17 @@ function removeTodo(element) {
  * @param {HTMLElement} element - todo li item
  */
 function doneTodo(element) {
+  element.parentElement.style.textDecoration = "line-through";
   doneList.appendChild(element.parentElement);
+}
+
+/** notDoneTodo
+ * put the todo item in the list
+ * @param {HTMLElement} element - todo li item
+ */
+function notDoneTodo(element) {
+  element.parentElement.style.textDecoration = "";
+  list.appendChild(element.parentElement);
 }
 
 // add todo item when add button is clicked
@@ -59,8 +69,14 @@ document.addEventListener("click", (e) => {
   if (e.target && e.target.id == "remove") {
     removeTodo(e.target);
   }
-  // switch todo to done list
+
   if (e.target && e.target.id == "done") {
-    doneTodo(e.target);
+    if (e.target.parentElement.parentElement.id === "list") {
+      // switch todo to done list
+      doneTodo(e.target);
+    } else {
+      // switch todo to list
+      notDoneTodo(e.target);
+    }
   }
 });
