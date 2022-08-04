@@ -35,12 +35,14 @@ function isInputEmpty(input) {
   return !input.value || input.value === "" || input.value === null;
 }
 
+/** titleDisplay
+ * display the list title "ToDo" || "Done" if the list contain 1 or more li item
+ * @param {HTMLElement} element
+ */
 function titleDisplay(element) {
   // Display title if the list contain 1 or more item
   if (element.childNodes.length > 0) {
     element.querySelector(".title").hidden = false;
-  } else {
-    element.querySelector(".title").hidden = true;
   }
 }
 
