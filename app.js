@@ -20,6 +20,8 @@ function addTodo(todo) {
     let li = document.createElement("li");
     li.innerHTML = "<p>" + todo.value + '</p><input id="done" type="button" value="V"><input id="remove" type="button" value="X">';
     list.appendChild(li);
+    // display title if the list contain 1 or more todo item
+    displayTitle(list);
     // reset todo input value
     todo.value = "";
   }
@@ -31,6 +33,13 @@ function addTodo(todo) {
  */
 function isInputEmpty(input) {
   return !input.value || input.value === "" || input.value === null;
+}
+
+function displayTitle(element) {
+  // Display title if the list contain 1 or more item
+  if (element.childNodes.length > 0) {
+    element.querySelector(".title").hidden = false;
+  }
 }
 
 /** removeTodo
@@ -46,6 +55,8 @@ function removeTodo(element) {
  * @param {HTMLElement} element - todo li item
  */
 function doneTodo(element) {
+  // display title if the list contain 1 or more todo item
+  displayTitle(doneList);
   element.parentElement.style.textDecoration = "line-through";
   doneList.appendChild(element.parentElement);
 }
@@ -55,6 +66,8 @@ function doneTodo(element) {
  * @param {HTMLElement} element - todo li item
  */
 function notDoneTodo(element) {
+  // display title if the list contain 1 or more todo item
+  displayTitle(list);
   element.parentElement.style.textDecoration = "";
   list.appendChild(element.parentElement);
 }
