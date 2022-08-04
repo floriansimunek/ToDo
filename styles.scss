@@ -1,0 +1,100 @@
+/* ALL */
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* TAGS */
+body {
+  background-color: #eee;
+}
+
+/* ToDo */
+#todo {
+  //style
+  background-color: #fff;
+  width: 90%;
+  margin: 2rem auto;
+  padding: 1rem 0.5rem;
+  border-radius: 0.5rem;
+  //flex
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    width: 100%;
+    //flex
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #input {
+    // style
+    padding: 0 0.5rem;
+    width: 80%;
+    height: 30px;
+    background-color: #eee;
+    border: none;
+  }
+
+  #add {
+    // style
+    width: 30px;
+    height: 30px;
+    background-color: #0068ff;
+    color: #fff;
+    border: none;
+  }
+
+  #list,
+  #done-list {
+    //style
+    list-style: none;
+    width: 100%;
+    margin: 0.5rem 0;
+    //flex
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      // style
+      width: 100%;
+      //flex
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        width: 80%;
+      }
+
+      #done,
+      #remove {
+        width: 30px;
+        height: 30px;
+        border: none;
+      }
+
+      #done {
+        background-color: #0f0;
+      }
+
+      #remove {
+        background-color: #f00;
+      }
+    }
+  }
+}

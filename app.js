@@ -57,7 +57,7 @@ function removeTodo(element) {
 function doneTodo(element) {
   // display title if the list contain 1 or more todo item
   displayTitle(doneList);
-  element.parentElement.style.textDecoration = "line-through";
+  element.parentElement.querySelector("p").style.textDecoration = "line-through";
   doneList.appendChild(element.parentElement);
 }
 
@@ -68,7 +68,7 @@ function doneTodo(element) {
 function notDoneTodo(element) {
   // display title if the list contain 1 or more todo item
   displayTitle(list);
-  element.parentElement.style.textDecoration = "";
+  element.parentElement.querySelector("p").style.textDecoration = "";
   list.appendChild(element.parentElement);
 }
 
